@@ -16,6 +16,7 @@ public class ConsumeService {
 	public static final String baseUrl = "http://localhost:8080";
 	
 	public Employee getEmployeeDetails(int employeeId){
+		System.out.println("*************************** Executing from ConsumeService ******************");
 		String getUrl = baseUrl +"/" + employeeId;
 		System.out.println("url : " + getUrl);
 		ResponseEntity<Employee> response = restTemplate.getForEntity(getUrl, Employee.class);
