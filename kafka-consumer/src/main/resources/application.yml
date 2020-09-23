@@ -1,0 +1,20 @@
+ 
+spring:
+  application:
+    name: kafka-consumer-application
+  cloud:
+    stream:
+      default-binder: kafka
+      kafka:
+        binder:
+          brokers:
+          - localhost:9092
+      bindings:
+        employee-input:
+         binder: kafka
+         destination: employee-details-topic
+         content-type: application/json
+         group: employee-group
+         
+server:
+  port: 9082

@@ -1,0 +1,22 @@
+ 
+spring:
+  application:
+    name: kafka-producer-application
+  cloud:
+    stream:
+      default-binder: kafka
+      kafka:
+        binder:
+          brokers:
+          - localhost:9092
+          auto-create-topics: true
+      bindings:
+        employee-output:
+         destination: employee-details-topic
+         content-type: application/json
+         group: employee-group
+
+
+server:
+  port: 9091
+          
